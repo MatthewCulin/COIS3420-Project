@@ -1,0 +1,618 @@
+/*********************************** Filename: default.css
+ * Applies to: all pages
+ *
+ * Usage: Default styling for most of the pages for the bucket list web site.
+ *
+ * Note: reset.css is also being used by all files in order to wipe settings
+ *
+ * Created by: Group 10 for COIS-3420H Project
+ ******************************************************************************
+ */
+
+ /* USED VARIABLES */
+ :root {
+   --link-color: #8fcf69;
+   --linkhover-color: #818181;
+   --text-color: #000;
+ }
+
+
+/*------------------------------------------------------------------------------
+|       FORMATTING FOR DOCUMENT WHICH IS INHERITED BY EVERY ELEMENT
+|-----------------------------------------------------------------------------*/
+body {
+  background-color: #F5E9E2;
+  color: var(--text-color);
+  font-family: Verdana, Helvetica, sans-serif;
+  font-size: 1em;
+  margin: auto;
+}
+
+main{
+  background-color: #FFF;
+  border-bottom-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  max-width: 70rem;
+  font-size: 1em;
+  padding: 0 0 0.6em 0;
+  margin: auto;
+}
+
+header{
+  text-align: center;
+  background: linear-gradient(var(--link-color), transparent);
+}
+
+main header{
+  align-items: flex-end;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 1em 0 0 0;
+}
+
+footer{
+  text-align: center;
+  border-top: 1px solid #000;
+  padding: 1em 0;
+  margin-top: 1em;
+}
+
+article {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+section {
+ padding-bottom: 3rem;
+}
+
+p,h1,h2,h3,h4,h5 {
+  padding: 0.5rem;
+}
+
+h1 {
+  font-size: 3em;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 2em;
+  font-weight: bold;
+  border-bottom: 2px solid var(--link-color);
+  padding-left: 0.5em;
+}
+
+h3 {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: 1.25em;
+}
+
+h5 {
+  font-size: 1.15em;
+}
+
+form {
+  border: 0.1em solid #818181;
+  border-radius: 0.3em;
+  box-shadow: 0.1em 0.1em #000;
+  margin: 1em auto;
+  padding: 1em;
+  width: 75%;
+}
+
+textarea{
+  border-radius: inherit;
+  width:90%;
+  resize: none;
+  overflow: auto;
+}
+
+ol {
+  list-style-type: decimal;
+  list-style-position: inside;
+}
+
+button, nav a, .dropdown, #login a {
+  padding: 0.3rem 1rem;
+  color: var(--text-color);
+  margin: 0.5rem auto;
+  background-color: var(--link-color);
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.3rem;
+}
+
+button:hover {
+  background-color: var(--linkhover-color);
+}
+
+input {
+  padding: 0.3rem;
+  border-radius: 0.3rem;
+  font-size: 1rem;
+  margin: 0.5rem 1rem;
+}
+
+
+/*------------------------------------------------------------------------------
+|                               NAVIGATION BAR
+|-----------------------------------------------------------------------------*/
+nav {
+  background-color: #333;
+}
+
+nav > ul {
+  max-width: 70rem;
+  display: flex;
+  align-items: center;
+  color: #FFF;
+  margin: 0 auto;
+}
+
+/* list items of navigaion bar */
+nav li, nav form {
+  display: flex;
+}
+
+#search-container {
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Search bar (2nd last child in list) */
+nav > ul > li:nth-last-child(3) {
+  margin-left: auto;
+}
+
+nav a, .dropdown, #login a {
+  text-decoration: none;
+  margin: 0.2rem 0.7rem;
+}
+
+nav a:hover, .dropdown:hover, #search-btn:hover {
+  background-color: var(--linkhover-color);
+}
+
+a[href^="index"] {
+  padding: 0 0.5em;
+  background-color: inherit;
+  color: inherit;
+
+}
+
+input[name$="search"] {
+  border: none;
+  padding: 0;
+}
+
+
+/*------------------------------------------------------------------------------
+|                               DROP DOWN
+| Modified From w3schools
+|-----------------------------------------------------------------------------*/
+.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown a {
+  margin: 0.4rem 0.2rem;
+}
+
+
+/* DROP DOWN BOXES (APPEARS AFTER NAV BUTTON IS HOVERED OVER) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 20rem;
+  box-shadow: 0rem 0.5rem 1rem 0rem #000;
+  z-index: 1;
+  top: 3rem;
+  border-radius: 0.5rem;
+
+}
+
+/* LINKS IN DROP DOWN BOXES */
+.dropdown-content a {
+  color: var(--text-color);
+  float: none;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  text-decoration: none;
+  flex-grow:1;
+}
+
+.personal > i {
+  padding: 0.75rem 0.25rem;
+  margin: 0.4rem;
+}
+
+.topnav a:hover, .dropdown:hover .dropbtn {
+  background-color: var(--linkhover-color);
+}
+
+.dropdown-content a:hover {
+  background-color: var(--linkhover-color);
+}
+
+.dropdown:hover .dropdown-content {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 700px) {
+  .topnav li:not(:first-child), .dropdown {
+    display: none;
+  }
+  .topnav li.icon {
+    display: block;
+    margin-left: auto;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive li.icon {
+    position: absolute;
+    right: 0;
+  }
+  .topnav.responsive > ul li {
+    float: none;
+    display: block;
+    text-align: left;
+    margin: 0.2em 0;
+    width: 100%;
+  }
+
+  .topnav.responsive ul{
+    flex-direction: column;
+    padding: 1rem 0;
+    margin: 0 1rem;
+  }
+  .topnav.responsive .dropdown {
+    float: none;
+    padding: 0;
+  }
+
+  .topnav.responsive .dropdown-content {
+    position: relative;
+    top: auto;
+    margin: 0;
+  }
+
+  /* .topnav.responsive .dropdown-content li {
+    padding: 1em 0;
+  } */
+
+  .topnav.responsive .icon a {
+    display: inline;
+    text-align: right;
+  }
+
+  .topnav.responsive .icon {
+    text-align: right;
+    padding-right: 1em;
+  }
+
+  .topnav.responsive a {
+    display: block;
+    margin: 0;
+  }
+
+  .topnav.responsive .personal{
+    /* margin: 1em 0; */
+    display: table;
+  }
+
+  .topnav.responsive #login-link{
+    text-align:center;
+  }
+
+  .topnav.responsive .personal > i, .topnav.responsive .personal a{
+    display: table-cell;
+  }
+
+  .topnav.responsive .personal a{
+    width: 100%
+  }
+  .topnav.responsive > ul > li:nth-child(2) {
+    order:1;
+  }
+
+  .topnav.responsive .dropdown {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: left;
+  }
+}
+/* End of copy from w3schools */
+
+
+
+/*------------------------------------------------------------------------------
+|                               MODAL STYLING
+|-----------------------------------------------------------------------------*/
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 5rem;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  max-width: 40em;
+  margin: auto;
+  border: 1px solid #888;
+  text-align: center;
+}
+
+.modal-body div {
+  margin: 1em auto;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: var(--text-color);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 0.2rem 1rem;
+  background-color: #5cb85c;
+  color: white;
+}
+
+.modal-body {
+  padding: 0.2rem 1rem;
+  margin: 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-footer {
+  padding: 0.2rem 1rem;
+  background-color: #5cb85c;
+  color: white;
+}
+
+/* SPECIFIC FOR IMAGE MODAL (w3schools) */
+/* Style the Image Used to Trigger the Modal */
+#image {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  height:30%;
+  width: 90%;
+  max-width: 20em;
+}
+
+#image:hover {opacity: 0.7;}
+
+
+/* Modal Content (Image) */
+.modal-contentimg {
+  margin: auto;
+  display: block;
+  width: 95%;
+  max-width: 50em;
+  background-color: #fefefe;
+  text-align: center;
+}
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-contentimg, #caption {
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+
+
+/*------------------------------------------------------------------------------
+|                               FORM STYLING
+|-----------------------------------------------------------------------------*/
+form div{
+  margin: 0.5em auto;
+  padding: 0.3em 0;
+}
+
+.social-options{
+  display: flex;
+  flex-direction: column;
+  margin: 0.3rem auto;
+}
+
+#my-signin2 div{
+  padding: 0;
+  margin: 0;
+}
+
+#create-list{
+  display: inherit;
+}
+
+
+/*------------------------------------------------------------------------------
+|                                 LIST STYLING
+|-----------------------------------------------------------------------------*/
+main header div:nth-child(-n+3) span{
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+main header~ul li, section ul li{
+  align-content: center;
+  border-bottom: 0.1em solid #818181;
+  display: flex;
+  margin: 1em 3em;
+  padding: 0.3em 0;
+}
+
+main header~ul li span, section ul li span{
+  align-self: center;
+}
+
+main header~ul li div, section ul li div{
+  margin-left: auto;
+}
+
+main header~ul li:last-of-type, section ul li:last-of-type{
+  border: none;
+  justify-self: flex-start;
+}
+
+/*------------------------------------------------------------------------------
+|                             EDIT ITEM STYLING
+|-----------------------------------------------------------------------------*/
+#edit-item div:first-child input{
+  width: 15em;
+}
+
+#edit-item textarea{
+  border-radius: inherit;
+  overflow: auto;
+  resize: none;
+  width:30em;
+  vertical-align: top;
+}
+
+#edit-item div:nth-child(2){
+  display:flex;
+}
+
+#edit-item div:nth-child(2) label{
+  align-self: flex-start;
+  padding-right: 1em;
+}
+
+#file{
+  border: 0.1rem solid black;
+}
+
+/*------------------------------------------------------------------------------
+|                               LOGIN STYLING
+|-----------------------------------------------------------------------------*/
+#login a:hover {
+  background-color: var(--linkhover-color);
+}
+
+.login-methods {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.manual-login {
+  display: flex;
+  flex-direction: column;
+}
+
+.manual-login > input {
+  margin: 0.5em auto;
+}
+
+
+/*------------------------------------------------------------------------------
+|                               OTHER CSS STYLING
+|-----------------------------------------------------------------------------*/
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete{
+  background-color: red;
+}
+
+.delete:hover{
+  background-color: lightcoral;
+}
+
+
+.error{
+  color: red;
+  font-style: italic;
+}
+
+.hidden{
+  display: none;
+}
+
+/*
+|
+| DATE DROPPER STYLING
+|
+*/
+div.datedropper.bucket {
+
+  --dd-color1: #8fcf69;
+  --dd-color2: #FFF;
+  --dd-color3: #4D4D4D;
+  --dd-color4: #FFF;
+
+  --dd-radius: 6px;
+  --dd-width: 183px;
+  --dd-shadow: 0 0 32px 0px rgba(0, 0, 0, 0.1);
+
+}
